@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to the New Year!</title>
+  <style>
+    body {
+      background-color: #1c1c1c;
+      color: white;
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding-top: 50px;
+    }
+    #newYearMessage {
+      font-size: 3em;
+      color: #ff6f61;
+      margin-top: 20px;
+    }
+    #celebration {
+      font-size: 2em;
+      color: #ffea92;
+      margin-top: 10px;
+    }
+    #inputArea {
+      margin-top: 20px;
+    }
+    #friendMessage {
+      width: 60%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 2px solid #ff6f61;
+      font-size: 1em;
+      background: #333;
+      color: white;
+    }
+    #sendButton {
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      background-color: #ff6f61;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    #sendButton:hover {
+      background-color: #ff8a76;
+      transform: scale(1.1);
+    }
+    #messageList {
+      font-size: 1.5em;
+      margin-top: 20px;
+      overflow: hidden;
+      height: 200px; /* Set height for the scrolling container */
+      border: 2px solid #ff6f61;
+      border-radius: 10px;
+      padding: 10px;
+      background-color: #333;
+      box-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
+    }
+    .messageItem {
+      margin: 10px 0;
+      color: #ffea92;
+      text-shadow: 0 0 5px rgba(255, 234, 146, 0.8);
+    }
+    #fireworksImage {
+      margin-top: 20px;
+      width: 80%; /* Adjust the width as needed */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div id="newYearMessage">ยินดีต้อนรับสู่ปีใหม่!</div>
+  <div id="celebration">ฉลองไปกับเราในปีนี้!</div>
+  <img id="fireworksImage" src="path/to/your/fireworks-image.jpg" alt="Happy New Year 2025 Fireworks">
+  <div id="inputArea">
+    <input type="text" id="friendMessage" placeholder="ส่งข้อความถึงเพื่อน...">
+    <button id="sendButton">ส่งข้อความ</button>
+  </div>
+  <div id="messageList"></div>
+  <script>
+    function displayMessage() {
+      var message = document.getElementById('friendMessage').value;
+      if (message.trim() !== '') {
+        var messageList = document.getElementById('messageList');
+        var messageItem = document.createElement('div');
+        messageItem.textContent = message;
+        messageItem.className = 'messageItem';
+        messageList.appendChild(messageItem);
+        document.getElementById('friendMessage').value = ''; // Clear the input field
+      }
+    }
+
+    document.getElementById('sendButton').addEventListener('click', displayMessage);
+  </script>
+</body>
+</html>
